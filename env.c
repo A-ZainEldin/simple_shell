@@ -5,7 +5,7 @@
 *
 *Return: returns null
 */
-char *environment(cahr *command)
+char *environment(char *command)
 {
 	char *cmd = NULL, *cmd2 = NULL, *elist = NULL;
 	char *etoken =  NULL;
@@ -18,27 +18,26 @@ char *environment(cahr *command)
 	etoken = strtok(cmd2, ":");
 	while (etoken)
 	{
-	ylength = strlen(etoken);
-	elist = malloc(ylength + xlength + 2);
-	elist = strdup(etoken);
-	strcat(elist, "/");
-	strcat(elist, command);
-	strcat(elist, "\0");
-	if (stat(elist, &info) == 0)
-	{
-	free(cmd2);
-	return (elist);
-	}
-	else
-	{
-	free(elist);
-	etoken = strtok(NULL, ":");
-	}
-
+		ylength = strlen(etoken);
+		elist = malloc(ylength + xlength + 2);
+		elist = strdup(etoken);
+		strcat(elist, "/");
+		strcat(elist, command);
+		strcat(elist, "\0");
+		if (stat(elist, &info) == 0)
+		{
+			free(cmd2);
+			return (elist);
+		}
+		else
+		{
+			free(elist);
+			etoken = strtok(NULL, ":");
+		}
 	}
 	free(cmd2);
 	if (stat(command, &info) == 0)
-	return (command);
+		return (command);
 	else
-	return (NULL);
+		return (NULL);
 }

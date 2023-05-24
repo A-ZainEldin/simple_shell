@@ -15,12 +15,12 @@
 int main(int ac, char **av, char **envp)
 {
 	size_t x = 0;
-	int count = 0, argcount = 0, check;
-	char *prompt = "$: ", **arguments = NULL, *number = NULL, *separator = " \n";
-	char *numcpy = NULL, *token = NULL, *path = "/bin/";
+	int count = 0, argcount = 0;
+	char **arguments = NULL, *number = NULL, *separator = " \n";
+	char *numcpy = NULL, *token = NULL, ;
 	ssize_t done;
 
-	while (true)
+	while (1)
 	{
 		printf("$: ");
 		done = getline(&number, &x, stdin);
