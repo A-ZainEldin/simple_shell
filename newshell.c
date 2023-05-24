@@ -5,13 +5,12 @@
 #include <unistd.h>
 #include <sys/wait.h>
 /**
- * main - a demo for the shell
- * @ac : integer
- * @av : 2d array
- * @envp : the environmtent of the machine
- * Return : always 0;
+ *main - a demo for the shell
+ *@ac: integer
+ *@av: 2d array
+ *@envp: the environmtent of the machine
+ *Return: always 0;
  */
-
 
 int main(int ac, char **av, char **envp)
 {
@@ -21,8 +20,7 @@ int main(int ac, char **av, char **envp)
 	char *numcpy = NULL, *token = NULL, *path = "/bin/";
 	ssize_t done;
 
-
-	while(true)
+	while (true)
 	{
 		printf("$: ");
 		done = getline(&number, &x, stdin);
@@ -33,29 +31,23 @@ int main(int ac, char **av, char **envp)
 		if (token == NULL)
 			continue;
 		if (strcmp(token, "exit") == 0 || done == -1)
-		{
 			exit(-1);
-		}
 		while (token)
 		{
 			token = strtok(NULL, separator);
 			int argcount++;
 		}
-
 		arguments = malloc(sizeof(char *) * argc * 5);
 		if (arguments == NULL)
 			return (0);
-		token = strok (numcpy, separator);
-		for(count = 0; count < argcount; count++)
+		token = strok(numcpy, separator);
+		for (count = 0; count < argcount; count++)
 		{
 			arguments[count] = token;
 			token = strtok(NULL, separator);
 		}
 		arguments[count] = NULL;
-		if (fork() == 0)
-			execution(arguments,envp);
-		else
-			wait(NULL);
+		(fork() == 0) ? execution(arguments, envp) : wait(NULL);
 		argcount = 0;
 	}
 	free(numcpy);
