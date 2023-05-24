@@ -17,16 +17,16 @@ int main(int ac, char **av, char **envp)
 	size_t x = 0;
 	int count = 0, argcount = 0;
 	char **arguments = NULL, *number = NULL, *separator = " \n";
-	char *numcpy = NULL, *token = NULL, ;
+	char *numcpy = NULL, *token = NULL;
 	ssize_t done;
 
-	while (1)
+	while (1 && ac)
 	{
 		printf("$: ");
 		done = getline(&number, &x, stdin);
 		if (done == -1)
 			exit(0);
-		buff_copy = strdup(number);
+		numcpy = strdup(number);
 		token = strtok(number, separator);
 		if (token == NULL)
 			continue;
@@ -35,12 +35,12 @@ int main(int ac, char **av, char **envp)
 		while (token)
 		{
 			token = strtok(NULL, separator);
-			int argcount++;
+			 argcount++;
 		}
-		arguments = malloc(sizeof(char *) * argc * 5);
+		arguments = malloc(sizeof(char *) * (argcount * 5));
 		if (arguments == NULL)
 			return (0);
-		token = strok(numcpy, separator);
+		token = strtok(number, separator);
 		for (count = 0; count < argcount; count++)
 		{
 			arguments[count] = token;

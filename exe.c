@@ -5,7 +5,7 @@
 * @envp: environment variables
 */
 
-void execution(char **argv, char **envp);
+void execution(char **argv, char **envp)
 {
 	char *root = NULL;
 	int check;
