@@ -129,12 +129,12 @@ char *convert_number(long int num, int base, int flags)
  */
 void remove_comments(char *buf)
 {
-	int k;
+	int i;
 
-	for (k = 0; buf[k] != '\0'; k++)
-		if (buf[k] == '#' && (!k || buf[k - 1] == ' '))
+	for (i = 0; buf[i] != '\0'; i++)
+		if (buf[i] == '#' && (!i || buf[i - 1] == ' '))
 		{
-			buf[k] = '\0';
+			buf[i] = '\0';
 			break;
 		}
 }
