@@ -18,10 +18,10 @@ int interactive(info_t *info)
  * @delim: the string of delimeter
  * Return: 0 for false and 1 for true
  */
-int is_delim(char k, char *delim)
+int is_delim(char c, char *delim)
 {
 	while (*delim)
-		if (*delim++ == k)
+		if (*delim++ == c)
 			return (1);
 	return (0);
 }
@@ -32,9 +32,9 @@ int is_delim(char k, char *delim)
  * Return: 1 only and only if its alphatic 0 if smth else
  */
 
-int _isalpha(int k)
+int _isalpha(int c)
 {
-	if ((k >= 'a' && k <= 'z') || (k >= 'A' && k <= 'Z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else
 		return (0);
@@ -43,7 +43,7 @@ int _isalpha(int k)
 /**
  * _atoi - converts from a string to a weird integer
  * @s: the string is going to be converted
- * Return: 0 will be there if no numberss in the strings, wil be conv. otherwise
+ * Return: 0 will be there if no numberss in the strings, wil be conv otherwise
  */
 
 int _atoi(char *s)

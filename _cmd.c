@@ -23,7 +23,7 @@ int is_cmd(info_t *info, char *path)
 }
 
 /**
- * dup_chars – dups. The charss…
+ * dup_chars - dups. The charss…
  * @pathstr: a path str
  * @start: starts
  * @stop: stops

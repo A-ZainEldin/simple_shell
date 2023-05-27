@@ -44,13 +44,13 @@ int hsh(info_t *info, char **av)
 }
 
 /**
- * find_builtin – a func. that finds the commands
+ * find_builtin - a func. that finds the commands
  * @info: para of the struct
  *
  * Return: -1 not found…
- * 	0 success
- * 	1 not success
- * 	2 only signal for exit
+ *	0 success
+ *	1 not success
+ *	2 only signal for exit
  */
 int find_builtin(info_t *info)
 {
@@ -120,7 +120,7 @@ void find_cmd(info_t *info)
 }
 
 /**
- * fork_cmd – fork for an exec in the run of the CMD
+ * fork_cmd - fork for an exec in the run of the CMD
  * @info: just the parameters and the returining info
  *
  * Return: nothing but void
@@ -132,7 +132,7 @@ void fork_cmd(info_t *info)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		
+
 		perror("Error:");
 		return;
 	}
@@ -145,7 +145,7 @@ void fork_cmd(info_t *info)
 				exit(126);
 			exit(1);
 		}
-		
+
 	}
 	else
 	{

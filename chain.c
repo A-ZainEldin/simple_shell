@@ -39,7 +39,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
  * check_chain - checks if we should cont. the chain process.
  * @info: struct (parameter)
  * @buf: buff for the chars.
- * @p: the address 
+ * @p: the address
  * @i: start pos.
  * @len: the len. Of the buf
  *
@@ -140,7 +140,7 @@ int replace_vars(info_t *info)
 }
 
 /**
- * replace_string – will take over a string
+ * replace_string - will take over a string
  * @old: the old string loc.
  * @new: the new string
  *

@@ -5,7 +5,7 @@
  * @s: memo area..
  * @b: byte filled with *s
  * @n: bytes counter to put them
- * Return: a pointer for memo area(s).. 
+ * Return: a pointer for memo area(s)..
  */
 char *_memset(char *s, char b, unsigned int n)
 {
